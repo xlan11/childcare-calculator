@@ -1,20 +1,24 @@
 * { 
 	box-sizing: border-box;
 }
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Karla:wght@800&display=swap");
 
 html, body {
 	min-height: 100%;
 	background: #1c1c1c;
 	color: #fff;
 }
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Karla", sans-serif;
+}
 
 .container {
     background-color: #1f2937;
     width: 75%;
-    height: 550px;
+    height: 100%;
     margin: 20px auto;
     padding: 20px 40px;
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 400;
 }
@@ -30,6 +34,7 @@ hr {
     display:flex;
     justify-content: center;
     margin:25px;
+    ;
 }
 
 form {
@@ -53,8 +58,40 @@ label {
 
 input {
     display:block;
-    margin-bottom:20px;
+    margin:20px 0px;
     height:50px;
-    width:75%;
+    width:100%;
     padding:0px 20px;
 }
+
+ul li{
+    margin-bottom:20px;
+}
+
+ul li a {
+    color:#fff;
+}
+
+button {
+    font-size:16px;
+    line-height: 24px;
+    color:white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 9px 17px 9px 15px;
+    gap: 12px;
+    width: 191px;
+    height: 42px;
+    background: #10b981;
+    border-radius: 6px;
+    border:none;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+
+  button:hover {
+      background:#0d9b6c;
+      border: 3px solid #fff;
+  }
