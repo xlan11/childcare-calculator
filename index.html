@@ -11,25 +11,24 @@
 <body>
     <div class="container">
         <header>
-            <h1>Childminder calculator</h1>
+            <h1>Childcare cost calculator</h1>
         </header>
         <hr>
         <div class="content">
             <div class="form-input">
                 <h2>Details</h2>
                 <label>How much do you pay per hour for childcare?</label>
-                <input type="text" pattern="\d*" id="hourlyPrice" placeholder="0" />
-                <label>How many children are in childcare?</label>
-                    <input type="text" pattern="\d*" id="numKids" placeholder="0" />
+                    <input type="numbers" onfocus="this.type='number'" id="hourlyPrice" placeholder="£" />
+                <!-- <label>How many children are in childcare?</label>
+                    <input type="text" pattern="\d*" id="numKids" placeholder="0" /> -->
                 <label>How many full days a week? (8.5 hours)</label>
                     <input type="text" pattern="\d*" id="numDays" placeholder="0" />
                 <label>How many half days a week? (5 hours)</label>
                     <input type="text" pattern="\d*" id="numHalfDays" placeholder="0" />
-                <button id="calculate" onclick="totalCost()">Calculate</button>
-                
+                <button id="calculate" onclick="totalCost()"><a href="#jump">Calculate</a></button>
             </div>
             <div class="form-output">
-                <h2>Cost breakdown:</h2>
+                <a id="jump"></a>
                 <div id="cost-breakdown"></div>
             </div>
         </div>
