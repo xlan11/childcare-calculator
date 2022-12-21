@@ -147,6 +147,7 @@ button {
         flex-wrap: wrap;
         margin:0;
         padding:0px;
+        width:100%;
     }
 
     .container {

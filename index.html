@@ -22,9 +22,9 @@
                 <!-- <label>How many children are in childcare?</label>
                     <input type="text" pattern="\d*" id="numKids" placeholder="0" /> -->
                 <label>How many full days a week? (8.5 hours)</label>
-                    <input type="text" pattern="\d*" id="numDays" placeholder="0" />
+                    <input type="numbers" onfocus="this.type='number'" id="numDays" placeholder="0" />
                 <label>How many half days a week? (5 hours)</label>
-                    <input type="text" pattern="\d*" id="numHalfDays" placeholder="0" />
+                    <input type="numbers" onfocus="this.type='number'" id="numHalfDays" placeholder="0" />
                 <button id="calculate" onclick="totalCost()"><a href="#jump">Calculate</a></button>
             </div>
             <div class="form-output">
