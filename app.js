@@ -20,17 +20,19 @@ function totalCost() {
 
     let grossCost =  (parseFloat(kids.value)) * (parseFloat(dayRate)) + (parseFloat(halfDayRate));
     grossCost=grossCost.toFixed(2)
+    
+    let govSaving = (grossCost / 100) * 20;
+    govSaving = govSaving.toFixed(2);
 
-    let netCost =  (parseFloat(kids.value)) * (parseFloat(dayRate)) + (parseFloat(halfDayRate)) * govPercent;
+    let netCost =  (parseFloat(kids.value)) * (parseFloat(dayRate)) + (parseFloat(halfDayRate)) - govSaving;
     netCost = netCost.toFixed(2);
     
-            console.log('dayrate is ' + dayRate + ' half day rate is ' + halfDayRate)
+    // console.log('dayrate is ' + dayRate + ' half day rate is ' + halfDayRate)
 
     let monthly = netCost * 4;
     monthly = monthly.toFixed(2);
     
-    let govSaving = (grossCost / 100) * 20;
-    govSaving = govSaving.toFixed(2);
+
     
     displayBreakdown.innerHTML =
     `<ul>

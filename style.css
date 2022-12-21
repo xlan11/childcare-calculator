@@ -120,6 +120,7 @@ button {
     border:none;
     cursor: pointer;
     text-transform: uppercase;
+    font-weight: bold;;
   }
 
   button:hover {
