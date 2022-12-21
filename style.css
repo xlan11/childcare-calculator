@@ -25,7 +25,7 @@ header {
     font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 400;
-    border-radius: 3px;
+    border-radius: 6px;
 }
 
 hr {
@@ -50,12 +50,16 @@ hr {
     padding:20px;
     color:#1c1c1c;
     text-align:center;
-    border-radius: 3px;
+    border-radius: 6px;
     margin-top:25px;
 }
 
 .math h2 {
     text-decoration: underline;
+}
+
+.math hr {
+    background-color:rgb(187, 187, 169);
 }
 
 .saving {
@@ -87,6 +91,8 @@ input {
     height:50px;
     width:100%;
     padding:0px 20px;
+    border-radius: 6px;
+    font-size:22px;
 }
 
 ul li{

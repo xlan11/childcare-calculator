@@ -1,6 +1,6 @@
 const govPercent = .8;
 const fullDayHours = 8.5;
-const halfDayHours = 4;
+const halfDayHours = 5;
 
 const kids = document.getElementById('numKids');
 const fullDays = document.getElementById('numDays');
@@ -15,8 +15,8 @@ function totalCost() {
     }
         else {
 
-    let dayRate = hourlyRate.value * fullDayHours;
-    let halfDayRate = hourlyRate.value * halfDayHours;
+    let dayRate = (hourlyRate.value * fullDays.value) * fullDayHours;
+    let halfDayRate = (hourlyRate.value * halfDays.value) * halfDayHours;
 
     let grossCost =  (parseFloat(kids.value)) * (parseFloat(dayRate)) + (parseFloat(halfDayRate));
     grossCost=grossCost.toFixed(2)
@@ -24,6 +24,8 @@ function totalCost() {
     let netCost =  (parseFloat(kids.value)) * (parseFloat(dayRate)) + (parseFloat(halfDayRate)) * govPercent;
     netCost = netCost.toFixed(2);
     
+            console.log('dayrate is ' + dayRate + ' half day rate is ' + halfDayRate)
+
     let monthly = netCost * 4;
     monthly = monthly.toFixed(2);
     
@@ -40,10 +42,11 @@ function totalCost() {
     </ul>
     <div class="math">
             <h2>Receipt</h2>
-            <p>Gross cost: ${grossCost}</p>
-            <p class="saving">Tax-free saving: -${govSaving}</p>
+            <p>Full days: £${dayRate}</p>
+            <p>Half days: £${halfDayRate}</p>
+            <p class="saving">Tax-free saving: £${govSaving}</p>
             <hr>
-            <p><strong>Total weekly bill: ${netCost}</strong></p>
+            <p><strong>Total weekly bill: £${netCost}</strong></p>
     </div>
     `}
     }
