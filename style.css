@@ -12,6 +12,10 @@ h1,h2,h3,h4,h5,h6 {
     font-family: "Karla", sans-serif;
 }
 
+header {
+    margin:20px 45px;
+}
+
 .container {
     background-color: #1f2937;
     width: 75%;
@@ -21,6 +25,7 @@ h1,h2,h3,h4,h5,h6 {
     font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 400;
+    border-radius: 3px;
 }
 
 hr {
@@ -34,7 +39,27 @@ hr {
     display:flex;
     justify-content: center;
     margin:25px;
-    ;
+
+}
+
+.math {
+    width:100%;
+    display:block;
+    margin: 0 auto;
+    background-color:beige;
+    padding:20px;
+    color:#1c1c1c;
+    text-align:center;
+    border-radius: 3px;
+    margin-top:25px;
+}
+
+.math h2 {
+    text-decoration: underline;
+}
+
+.saving {
+    color:#0d9b6c;
 }
 
 form {
@@ -95,3 +120,27 @@ button {
       background:#0d9b6c;
       border: 3px solid #fff;
   }
+
+  /* MEDIA QUERIES */
+  @media only screen and (max-width: 768px) {
+    .content {
+        flex-wrap: wrap;
+        margin:0;
+        padding:0px;
+    }
+
+    .container {
+        padding:10px;
+    }
+
+    button {
+        width:100%;
+        font-size:14px;
+    }
+
+    .form-input, .form-output{
+        width:100%;
+    }
+
+    }
+  
