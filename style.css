@@ -33,7 +33,7 @@ hr {
     background-color: #2f3e53;
     height: 1px;
     border: none;
-    margin: 20px 0px;
+    margin: 10px 0px;
 }
 
 .content {
@@ -78,13 +78,16 @@ form {
 
 .form-input {
     width:50%;
-    margin:25px;
+    margin:0px 25px;
+}
 
+.form-input h2, .form-output h2 {
+    margin-top: 0px;
 }
 
 .form-output {
     width:50%;
-    margin:25px;
+    margin:0px 25px;
 }
 
 label {
@@ -109,7 +112,7 @@ ul li a {
     color:#fff;
 }
 
-button {
+.btn-submit {
     font-size:18px;
     line-height: 24px;
     color:white;
@@ -130,16 +133,37 @@ button {
     margin-top:40px; 
   }
 
-  button:hover {
+  .btn-submit:hover {
       background:#0d9b6c;
       border: 3px solid #fff;
   }
 
-  button a{
+  .btn-submit a{
     text-decoration: none;
     color:#fff;
   }
 
+  .btn-submit:disabled {
+    opacity: 0.3;
+    cursor:default;
+    pointer-events: none;
+  }
+
+  .btn-submit:disabled:hover {
+    background:#0d9b6c;
+    border: 0;
+    cursor:default;
+    
+  }
+
+  .btn-submit:disabled a {
+    cursor:default;
+  }
+
+  input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}   
 
 /* MEDIA QUERIES */
   @media only screen and (max-width: 768px) {
