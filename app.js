@@ -39,9 +39,9 @@ function totalCost() {
     <ul>
         <li>Your child(ren) are in childcare for ${fullDays.value} full days and ${halfDays.value} half days per week.</li>
         <li>Your total childcare before deductions is <strong>£${grossCost}</strong> per week</li>
-        <li><a href="https://www.gov.uk/tax-free-childcare" target="_blank">Tax-free childcare scheme</a> is saving you £${govSaving} per week</li>
+        <li><a href="https://www.gov.uk/tax-free-childcare" target="_blank">Tax-free childcare scheme</a> is saving you <strong>£${govSaving}</strong> per week</li>
         <li>Your childcare after deductions is <strong>£${netCost}</strong> per week</li>
-        <li>This works out to £${monthly} per month assuming a four week month</li>
+        <li>This works out to <strong>£${monthly}</strong> per month assuming a four week month</li>
     </ul>
     <div class="math">
             <h2>Receipt</h2>
