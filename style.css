@@ -17,6 +17,7 @@ header {
     margin:20px 45px;
 }
 
+
 .container {
     background-color: #1f2937;
     width: 75%;
@@ -81,6 +82,11 @@ form {
     margin:0px 25px;
 }
 
+.form-input a{
+    text-decoration: none;
+    color:#fff;
+  }
+
 .form-input h2, .form-output h2 {
     margin-top: 0px;
 }
@@ -136,11 +142,6 @@ ul li a {
   .btn-submit:hover {
       background:#0d9b6c;
       border: 3px solid #fff;
-  }
-
-  .btn-submit a{
-    text-decoration: none;
-    color:#fff;
   }
 
   .btn-submit:disabled {
