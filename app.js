@@ -18,12 +18,13 @@ function submitValid() {
     submit.disabled=true;}
     else {
         submit.disabled= false;
-    }
-    
+    }    
 }
     
 function totalCost() {
-
+    let form = document.getElementById("myForm");
+    form.addEventListener("submit", function(event) {
+    event.preventDefault(); 
     let dayRate = (hourlyRate.value * fullDays.value) * fullDayHours;
     dayRate = dayRate.toFixed(2);
     let halfDayRate = (hourlyRate.value * halfDays.value) * halfDayHours;
@@ -53,4 +54,4 @@ function totalCost() {
             <hr>
             <p><strong>Total weekly bill: £${netCost}</strong></p>
     </div>
-    `}
+    `})}
