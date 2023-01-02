@@ -19,9 +19,11 @@ function submitValid() {
     else {
         submit.disabled= false;
     }
+    
 }
-
+    
 function totalCost() {
+
     let dayRate = (hourlyRate.value * fullDays.value) * fullDayHours;
     dayRate = dayRate.toFixed(2);
     let halfDayRate = (hourlyRate.value * halfDays.value) * halfDayHours;
