@@ -7,11 +7,13 @@ const halfDays = document.getElementById('numHalfDays');
 const displayBreakdown = document.getElementById('cost-breakdown')
 const hourlyRate = document.getElementById('hourlyPrice')
 const submit = document.getElementById('calculate')
+let previous = []
 
 fullDays.addEventListener('input', submitValid);
 halfDays.addEventListener('input', submitValid);
 hourlyRate.addEventListener('input', submitValid);
 submit.addEventListener('click', totalCost)
+
 
 function submitValid() {
   if (fullDays.value === "" || halfDays.value === "" || hourlyRate.value ===""){
@@ -54,4 +56,15 @@ function totalCost() {
             <hr>
             <p><strong>Total weekly bill: £${netCost}</strong></p>
     </div>
-    `})}
+    `
+    previous.push({
+        full: dayRate,
+        half: halfDayRate,
+        gross: grossCost,
+        saving: govSaving,
+        net: netCost,
+        monthly: monthly,
+    })
+    console.log(previous)
+    // previous = JSON.stringify(previous)
+})}
