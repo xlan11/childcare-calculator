@@ -7,6 +7,7 @@ const halfDays = document.getElementById('numHalfDays');
 const displayBreakdown = document.getElementById('cost-breakdown')
 const hourlyRate = document.getElementById('hourlyPrice')
 const submit = document.getElementById('calculate')
+const previousEntry = document.getElementById('previous1')
 let previous = []
 
 fullDays.addEventListener('input', submitValid);
@@ -65,6 +66,10 @@ function totalCost() {
         net: netCost,
         monthly: monthly,
     })
-    console.log(previous)
     // previous = JSON.stringify(previous)
+    previousEntry.innerHTML = items.map(previous =>`<p>Full: ${previous.full}</p>`).join('');
+    console.log(previous)
+    // 
 })}
+
+// 29313

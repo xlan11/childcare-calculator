@@ -30,6 +30,32 @@ header {
     border-radius: 6px;
 }
 
+.previous-submissions{
+    display:flex;
+    /* background-color: red; */
+    justify-content: space-between;
+    height:120px;
+}
+
+#previous-results{
+    margin:0px 25px;
+    padding:20px;
+}
+
+#submissions-container{
+    height:100px;
+    width:100%;
+    margin:0 25px;
+}
+
+.submission {
+    background-color:blue;
+    width:30%;
+    padding:20px;
+    border-radius:5px;
+    color:beige;
+}
+
 hr {
     background-color: #2f3e53;
     height: 1px;
@@ -89,6 +115,10 @@ form {
 
 .form-input h2, .form-output h2 {
     margin-top: 0px;
+}
+
+.form-input p {
+    font-size:smaller;
 }
 
 .form-output {
