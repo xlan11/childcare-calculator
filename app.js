@@ -13,7 +13,9 @@ fullDays.addEventListener('input', submitValid);
 halfDays.addEventListener('input', submitValid);
 hourlyRate.addEventListener('input', submitValid);
 submit.addEventListener('click', totalCost)
-
+let form = document.getElementById("calc");
+    form.addEventListener("submit", function(event) {
+    event.preventDefault(); })
 
 function submitValid() {
   if (fullDays.value === "" || halfDays.value === "" || hourlyRate.value ===""){
@@ -24,9 +26,7 @@ function submitValid() {
 }
     
 function totalCost() {
-    let form = document.getElementById("myForm");
-    form.addEventListener("submit", function(event) {
-    event.preventDefault(); 
+    
     let dayRate = (hourlyRate.value * fullDays.value) * fullDayHours;
     dayRate = dayRate.toFixed(2);
     let halfDayRate = (hourlyRate.value * halfDays.value) * halfDayHours;
@@ -57,7 +57,8 @@ function totalCost() {
             <p><strong>Total weekly bill: £${netCost}</strong></p>
     </div>
     `
-    previous.push({
+    previous.unshift({
+        hourly: hourlyRate,
         full: dayRate,
         half: halfDayRate,
         gross: grossCost,
@@ -65,6 +66,20 @@ function totalCost() {
         net: netCost,
         monthly: monthly,
     })
-    console.log(previous)
-    // previous = JSON.stringify(previous)
-})}
+
+    const prevsTitle = document.getElementById("prevs-title");
+    prevsTitle.style.visibility="visible"    
+    
+    const prevs = document.getElementById("submission-container");
+    const prevsBox = document.createElement("div")
+    prevsBox.className="submission"
+    prevs.appendChild(prevsBox)
+
+    prevsBox.innerHTML=`
+    <h4>Receipt for £${hourlyRate.value} per hour</h4>
+    <p>Full days: (${fullDays.value}) - £${previous[0].full}</p>
+    <p>Half days: (${halfDays.value}) - £${previous[0].half}</p>
+    <hr>
+    <p>Total cost: <strong>£${previous[0].net}</strong></p>
+    `
+}
