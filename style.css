@@ -30,6 +30,37 @@ header {
     border-radius: 6px;
 }
 
+.previous-submissions{
+    display:flex;
+    justify-content: flex-start;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+#previous-results{
+    margin:25px 25px;
+    padding:20px;
+}
+
+#previous-results h2 {
+    visibility:hidden;
+}
+
+#submissions-container{
+    height:100px;
+    width:100%;
+    margin:0 25px;
+}
+
+.submission {
+    background-color:beige;
+    width:32%;
+    padding:0px 20px;
+    border-radius:5px;
+    color:#1c1c1c;
+    height:100%;
+}
+
 hr {
     background-color: #2f3e53;
     height: 1px;
@@ -89,6 +120,10 @@ form {
 
 .form-input h2, .form-output h2 {
     margin-top: 0px;
+}
+
+.form-input p {
+    font-size:smaller;
 }
 
 .form-output {
@@ -208,6 +243,10 @@ ul li a {
     }
     input {
         margin:20px 0px;
+    }
+
+    .submission {
+        width:100%;
     }
     }
   
