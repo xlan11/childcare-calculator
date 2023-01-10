@@ -1,14 +1,13 @@
-
 const govPercent = .8;
 const fullDayHours = 8.5;
 const halfDayHours = 5;
 const kids = document.getElementById('numKids');
 const fullDays = document.getElementById('numDays');
 const halfDays = document.getElementById('numHalfDays');
-const displayBreakdown = document.getElementById('cost-breakdown');
-const hourlyRate = document.getElementById('hourlyPrice');
-const submit = document.getElementById('calculate');
-let previous = [];
+const displayBreakdown = document.getElementById('cost-breakdown')
+const hourlyRate = document.getElementById('hourlyPrice')
+const submit = document.getElementById('calculate')
+let previous = []
 
 fullDays.addEventListener('input', submitValid);
 halfDays.addEventListener('input', submitValid);
@@ -27,9 +26,7 @@ function submitValid() {
 }
     
 function totalCost() {
-    let form = document.getElementById("myForm");
-    form.addEventListener("submit", function(event) {
-    event.preventDefault(); 
+    
     let dayRate = (hourlyRate.value * fullDays.value) * fullDayHours;
     dayRate = dayRate.toFixed(2);
     let halfDayRate = (hourlyRate.value * halfDays.value) * halfDayHours;
@@ -69,6 +66,20 @@ function totalCost() {
         net: netCost,
         monthly: monthly,
     })
-    console.log(previous)
-    // previous = JSON.stringify(previous)
-})}
+
+    const prevsTitle = document.getElementById("prevs-title");
+    prevsTitle.style.visibility="visible"    
+    
+    const prevs = document.getElementById("submission-container");
+    const prevsBox = document.createElement("div")
+    prevsBox.className="submission"
+    prevs.appendChild(prevsBox)
+
+    prevsBox.innerHTML=`
+    <h4>Receipt for £${hourlyRate.value} per hour</h4>
+    <p>Full days: (${fullDays.value}) - £${previous[0].full}</p>
+    <p>Half days: (${halfDays.value}) - £${previous[0].half}</p>
+    <hr>
+    <p>Total cost: <strong>£${previous[0].net}</strong></p>
+    `
+}
