@@ -1,19 +1,22 @@
+
 const govPercent = .8;
 const fullDayHours = 8.5;
 const halfDayHours = 5;
 const kids = document.getElementById('numKids');
 const fullDays = document.getElementById('numDays');
 const halfDays = document.getElementById('numHalfDays');
-const displayBreakdown = document.getElementById('cost-breakdown')
-const hourlyRate = document.getElementById('hourlyPrice')
-const submit = document.getElementById('calculate')
-let previous = []
+const displayBreakdown = document.getElementById('cost-breakdown');
+const hourlyRate = document.getElementById('hourlyPrice');
+const submit = document.getElementById('calculate');
+let previous = [];
 
 fullDays.addEventListener('input', submitValid);
 halfDays.addEventListener('input', submitValid);
 hourlyRate.addEventListener('input', submitValid);
-submit.addEventListener('click', totalCost)
-
+submit.addEventListener('click', totalCost);
+let form = document.getElementById("myForm");
+form.addEventListener("submit", function(event) {
+event.preventDefault(); })
 
 function submitValid() {
   if (fullDays.value === "" || halfDays.value === "" || hourlyRate.value ===""){
@@ -24,9 +27,6 @@ function submitValid() {
 }
     
 function totalCost() {
-    let form = document.getElementById("myForm");
-    form.addEventListener("submit", function(event) {
-    event.preventDefault(); 
     let dayRate = (hourlyRate.value * fullDays.value) * fullDayHours;
     dayRate = dayRate.toFixed(2);
     let halfDayRate = (hourlyRate.value * halfDays.value) * halfDayHours;
@@ -67,4 +67,5 @@ function totalCost() {
     })
     console.log(previous)
     // previous = JSON.stringify(previous)
-})}
+
+}
