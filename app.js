@@ -73,7 +73,7 @@ function totalCost() {
     const prevs = document.getElementById("submission-container");
     const prevsBox = document.createElement("div")
     prevsBox.className="submission"
-    prevs.appendChild(prevsBox)
+    prevs.prepend(prevsBox)
 
     prevsBox.innerHTML=`
     <h4>Receipt for £${hourlyRate.value} per hour</h4>
